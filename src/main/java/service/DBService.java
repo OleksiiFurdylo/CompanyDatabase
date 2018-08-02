@@ -11,25 +11,25 @@ public class DBService {
     private static Connection connection;
 
     private static String createStaff =     "CREATE TABLE IF NOT EXISTS staff (\n"
-                                            + "	staff_id integer PRIMARY KEY,\n"
+                                            + "	staff_id integer  PRIMARY KEY AUTOINCREMENT,\n"
                                             + "	name text NOT NULL,\n"
                                             + "	age real\n"
                                             + ");";
 
     private static String createCompanies = "CREATE TABLE IF NOT EXISTS companies (\n"
-                                            + "	company_id integer PRIMARY KEY,\n"
+                                            + "	company_id integer PRIMARY KEY AUTOINCREMENT,\n"
                                             + "	company_name text NOT NULL\n"
                                             + ");";
 
     private static String createEmployees = "CREATE TABLE IF NOT EXISTS employees (\n"
-                                            + "	staff_id integer PRIMARY KEY,\n"
-                                            + "	employee_id integer,\n"
+                                            + "	staff_id integer PRIMARY KEY AUTOINCREMENT,\n"
+                                            //+ "	employee_id integer, \n"
                                             + "	department_id integer,\n"
                                             + " FOREIGN KEY (department_id) REFERENCES departments(department_id)\n"
                                             + ");";
 
     private static String createDepartments = "CREATE TABLE IF NOT EXISTS departments (\n"
-                                            + "	department_id integer PRIMARY KEY,\n"
+                                            + "	department_id integer PRIMARY KEY AUTOINCREMENT,\n"
                                             + "	department_name text NOT NULL,\n"
                                             + "	district_name text NOT NULL,\n"
                                             + "	company_id integer,\n"
