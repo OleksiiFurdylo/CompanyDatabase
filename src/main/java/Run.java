@@ -10,6 +10,7 @@ import java.sql.*;
 public class Run {
     public static void main(String[] args) throws IOException {
         DBService.createDatabase("test");
+        DBService.createStructureForDatabase(DBService.getConnection());
 
     }
 
